@@ -25,3 +25,11 @@ fi
 if [[ ! -z "$ANDROID_HOME" ]]; then
     export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
 fi
+
+if [[ -s "$HOME/.aliases.sh" ]]; then
+    source "$HOME/.aliases.sh"
+fi
+
+if [[ -s "$HOME/.functions.sh" ]]; then
+    source "$HOME/.functions.sh"
+fi

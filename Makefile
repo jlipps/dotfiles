@@ -1,4 +1,4 @@
-.PHONY: mosh brew ssh nvim git lint node python eressea java tmux clean-all
+.PHONY: mosh brew ssh nvim git lint node python eressea java tmux libs node-libs brew-libs clean-all
 
 nvim_config := $$HOME/.config/nvim
 nvim_link := $(nvim_config)/init.vim
@@ -23,6 +23,9 @@ node: .make.node
 python: .make.python
 java: .make.java
 tmux: .make.tmux
+libs: node-libs brew-libs
+node-libs: .make.node-libs
+brew-libs: .make.brew-libs
 
 ssh:
 	test -L $$HOME/.ssh/config || ln -s $$(pwd)/ssh/config $$HOME/.ssh/config
@@ -89,3 +92,15 @@ eressea:
 	git clone https://github.com/tmux-plugins/tpm $(tpm_home)/tpm
 	ln -s $$(pwd)/tmux/tmux.conf $$HOME/.tmux.conf
 	touch .make.tmux
+
+.make.node-libs: node
+	npm install -g diff-so-fancy
+	npm install -g mocha
+	npm install -g gulp
+	npm install -g eslint
+	touch .make.node-libs
+
+.make.brew-libs: brew
+	brew install the_silver_searcher
+	brew install reattach-to-user-namespace
+	touch .make.brew-libs
