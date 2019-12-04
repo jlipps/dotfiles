@@ -1,10 +1,11 @@
-.PHONY: mosh brew ssh nvim git lint node python eressea java clean-all
+.PHONY: mosh brew ssh nvim git lint node python eressea java tmux clean-all
 
 nvim_config := $$HOME/.config/nvim
 nvim_link := $(nvim_config)/init.vim
 nvim_home := $$HOME/.local/share/nvim
 git_config := $$HOME/.gitconfig
 git_ignore := $$HOME/.gitignore
+tpm_home := $$HOME/.tmux/plugins
 eslintrc := $$HOME/.eslintrc
 pep8 := $$HOME/.pep8
 
@@ -21,6 +22,7 @@ git: .make.git
 node: .make.node
 python: .make.python
 java: .make.java
+tmux: .make.tmux
 
 ssh:
 	test -L $$HOME/.ssh/config || ln -s $$(pwd)/ssh/config $$HOME/.ssh/config
@@ -79,3 +81,11 @@ eressea:
 .make.java: brew
 	brew tap AdoptOpenJDK/openjdk
 	brew cask install adoptopenjdk8
+	touch .make.java
+
+.make.tmux: brew
+	brew install tmux
+	mkdir -p $(tpm_home)
+	git clone https://github.com/tmux-plugins/tpm $(tpm_home)/tpm
+	ln -s $$(pwd)/tmux/tmux.conf $$HOME/.tmux.conf
+	touch .make.tmux

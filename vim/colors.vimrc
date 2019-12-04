@@ -1,10 +1,11 @@
 " -----------------
 " Colors and themes
 " -----------------
+"
 
-set termguicolors
-let base16colorspace=256
-set background=dark
+if has('termguicolors')
+    set termguicolors
+end
 
 colorscheme base16-tomorrow-night
 

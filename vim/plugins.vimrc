@@ -4,6 +4,7 @@
 
 call plug#begin(stdpath('data') . '/plugged')
 
+
 " General Vim utilities
 Plug 'sjl/gundo.vim', {'on': 'GUndoToggle'}  " undo tree visualizer
 Plug 'kana/vim-arpeggio'  " press multiple keys to make a chord
