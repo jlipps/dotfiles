@@ -1,0 +1,54 @@
+[user]
+    name = Jonathan Lipps
+    email = jlipps@gmail.com
+[color]
+    ui = true
+[alias]
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    go= !if git stash | grep -v \"No local changes to save\" \n then git pull --rebase --tags && git push && git stash pop \n else git pull --rebase && git push \n fi
+    get= !if git stash | grep -v \"No local changes to save\" \n then git pull --rebase --tags && git stash pop \n else git pull --rebase \n fi
+    goup= !if git stash | grep -v \"No local changes to save\" \n then git pull --rebase --tags upstream master && git push && git push upstream master && git stash pop \n else git pull --rebase upstream master && git push && git push upstream master \n fi
+    getup= !if git stash | grep -v \"No local changes to save\" \n then git pull --rebase --tags upstream master && git stash pop \n else git pull --rebase upstream master \n fi
+    gr= log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
+    switch = !legit switch \"$@\"
+    branches = !legit branches
+    sprout = !legit sprout \"$@\"
+    unpublish = !legit unpublish \"$@\"
+    harvest = !legit harvest \"$@\"
+    sync = !legit sync \"$@\"
+    publish = !legit publish \"$@\"
+    graft = !legit graft \"$@\"
+    subpull= submodule foreach git pull
+    # git change-commits GIT_COMMITTER_NAME "old name" "new name"
+    change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
+[credential]
+    helper = osxkeychain
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+[push]
+    default = simple
+[pull]
+    default = current
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
+[remote]
+    pushdefault = origin
+[remote "origin"]
+    push = HEAD
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+[pager]
+    diff = diff-so-fancy | less --tabs=1,5 -RFX
+    show = diff-so-fancy | less --tabs=1,5 -RFX
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

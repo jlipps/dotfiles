@@ -1,0 +1,16 @@
+*.swp
+*.swn
+*.swo
+*.un~
+*.un*
+*.ropeproject
+*.*~
+*.pyc
+*.code-workspace
+_vimrc_local.vim
+test/functional/sfdc
+Gemfile.lock
+.netrwhist
+.DS_Store
+npm-debug.log
+.vscode
