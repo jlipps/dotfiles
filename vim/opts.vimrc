@@ -81,6 +81,8 @@ let g:neomake_error_sign={'text': '✗', 'texthl': 'Error'}
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#sources = {}
+" turn deoplete off for java since we use coc.nvim for that
+autocmd FileType java call deoplete#custom#buffer_option('auto_complete', v:false)
 
 " nerdtree options
 let NERDTreeIgnore=['\.pyc$', '\~$']

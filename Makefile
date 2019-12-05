@@ -80,6 +80,7 @@ numenor:
 .make.node: .make.shell
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 	source "$(nvm)/nvm.sh" && nvm install node
+	npm install -g yarn  # yarn is necessary for nvim plugin compilation, so install it now
 	touch .make.node
 
 .make.python: .make.brew
@@ -104,7 +105,6 @@ numenor:
 	npm install -g gulp
 	npm install -g eslint
 	npm install -g jsonlint
-	npm install -g yarn
 	touch .make.node-libs
 
 .make.brew-libs: .make.brew
