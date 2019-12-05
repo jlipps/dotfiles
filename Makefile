@@ -1,4 +1,4 @@
-.PHONY: mosh brew ssh nvim git lint node python eressea java tmux libs node-libs brew-libs clean-all
+.PHONY: mosh brew ssh nvim git lint node python eressea numenor java tmux libs node-libs brew-libs clean-all
 
 nvim_config := $$HOME/.config/nvim
 nvim_link := $(nvim_config)/init.vim
@@ -9,7 +9,7 @@ git_ignore := $$HOME/.gitignore
 tpm_home := $$HOME/.tmux/plugins
 eslintrc := $$HOME/.eslintrc
 pep8 := $$HOME/.pep8
-
+nvm := "$$HOME/.nvm"
 
 clean-all:
 	rm -rf .make.*
@@ -34,11 +34,14 @@ ssh:
 eressea:
 	test -L $$HOME/.zlocal || ln -s $$(pwd)/zsh/zlocal_eressea $$HOME/.zlocal
 
+numenor:
+	test -L $$HOME/.zlocal || ln -s $$(pwd)/zsh/zlocal_numenor $$HOME/.zlocal
+
 .make.brew:
-	/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	# /usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	touch .make.brew
 
-.make.mosh: brew
+.make.mosh: .make.brew
 	brew install mosh
 	touch .make.mosh
 
@@ -49,10 +52,10 @@ eressea:
 	chsh -s /bin/zsh
 	touch .make.shell
 
-.make.nvim: git node python
-	# brew install neovim
-	# npm install -g neovim
-	# pip3 install --user pynvim
+.make.nvim: .make.git .make.node .make.python
+	brew install neovim || brew upgrade neovim || true
+	npm install -g neovim
+	pip3 install --user pynvim
 	mkdir -p $(nvim_config)
 	mkdir -p $(nvim_home)/site
 	test -L $(nvim_link) || ln -s $$(pwd)/vim/init_bootstrap.vimrc $(nvim_link)
@@ -74,28 +77,28 @@ eressea:
 	test -L $(git_ignore) || ln -s $$(pwd)/git/gitignore $(git_ignore)
 	touch .make.git
 
-.make.node:
+.make.node: .make.shell
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-	[ -s "$$NVM_DIR/nvm.sh" ] && \. "$$NVM_DIR/nvm.sh" && nvm install node
+	source "$(nvm)/nvm.sh" && nvm install node
 	touch .make.node
 
-.make.python: brew
-	brew install python@3
+.make.python: .make.brew
+	# brew install python@3
 	touch .make.python
 
-.make.java: brew
+.make.java: .make.brew
 	brew tap AdoptOpenJDK/openjdk
 	brew cask install adoptopenjdk11
 	touch .make.java
 
-.make.tmux: brew
+.make.tmux: .make.brew
 	brew install tmux
 	mkdir -p $(tpm_home)
 	git clone https://github.com/tmux-plugins/tpm $(tpm_home)/tpm
 	ln -s $$(pwd)/tmux/tmux.conf $$HOME/.tmux.conf
 	touch .make.tmux
 
-.make.node-libs: node
+.make.node-libs: .make.node
 	npm install -g diff-so-fancy
 	npm install -g mocha
 	npm install -g gulp
@@ -104,6 +107,6 @@ eressea:
 	npm install -g yarn
 	touch .make.node-libs
 
-.make.brew-libs: brew
+.make.brew-libs: .make.brew
 	brew install the_silver_searcher reattach-to-user-namespace jq gradle
 	touch .make.brew-libs

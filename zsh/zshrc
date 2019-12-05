@@ -15,6 +15,7 @@ fi
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && export NODE_PATH="$(dirname $(dirname $(nvm which current)))/lib/node_modules"
 
 # Bring in system-dependent stuff
 if [[ -s "$HOME/.zlocal" ]]; then
@@ -33,3 +34,10 @@ fi
 if [[ -s "$HOME/.functions.sh" ]]; then
     source "$HOME/.functions.sh"
 fi
+
+if [[ -s "$HOME/.zprivate" ]]; then
+    source "$HOME/.zprivate"
+fi
+
+ulimit -n 8000
+

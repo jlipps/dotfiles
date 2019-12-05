@@ -1,0 +1,37 @@
+# PATH
+export PYTHON_USER_HOME="/Users/jlipps/Library/Python/3.7"
+export PYTHON_HOMEBREW_HOME="/usr/local/opt/python/libexec/bin"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home"
+export GOPATH="/Users/jlipps/Code/golang"
+export GOROOT="/usr/local/opt/go/libexec"
+export RUST_HOME="$HOME/.cargo"
+
+export ANT_HOME="/usr/local/ant"
+export ANDROID_HOME="/usr/local/adt/sdk"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
+
+export RUBY_BIN="/usr/local/opt/ruby/bin"
+export RUBY_GEMS="/usr/local/lib/ruby/gems/2.6.0/bin"
+export TEX_BIN="/usr/local/texlive/2017/bin/x86_64-darwin"
+export HASKELL_BIN="/Users/jlipps/Library/Haskell/bin"
+export RUST_BIN="$RUST_HOME/bin"
+
+export GENY_BIN="/Applications/Genymotion.app/Contents/MacOS"
+
+export PATH=$PYTHON_USER_HOME/bin:$PYTHON_HOMEBREW_HOME:$JAVA_HOME/bin:/usr/libexec:$ANT_HOME/bin:/usr/local/share/python:/usr/local/xle/bin:/Users/jlipps/bin:/Users/jlipps/bin/google-cloud-sdk/bin:/usr/local/git/bin:/usr/local/share/npm/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$TEX_BIN:$HASKELL_BIN:$GENY_BIN:$RUBY_GEMS:$RUBY_BIN:$RUST_BIN:$PATH
+
+# LD/LIB/Compile
+export OPENSSL_HOME=/usr/local/opt/openssl
+export LIBRARY_PATH=$OPENSSL_HOME/lib/
+export LDFLAGS="-L$OPENSSL_HOME/lib"
+export CPPFLAGS="-L$OPENSSL_HOME/include"
+
+#Setup virtualenvwrapper
+export WORKON_HOME=/usr/local/env
+export PYTHON_SHARE="/usr/local/share/python"
+export PIPENV_VENV_IN_PROJECT=1
+
+# Gcloud
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+
