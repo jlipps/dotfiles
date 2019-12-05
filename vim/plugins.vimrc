@@ -28,12 +28,10 @@ Plug 'junegunn/goyo.vim', {'on': 'Goyo'}  " nice focused writing environment
 Plug 'junegunn/limelight.vim', {'on': 'Limelight'}  " powers Goyo
 Plug 'junegunn/vim-easy-align'  " align around a certain character
 Plug 'vim-pandoc/vim-pandoc',  {'for': 'markdown'} " helpful markdown / pandoc stuff
-Plug 'frigoeu/psc-ide-vim', {'for': 'purescript'}
-
-" Themes
-Plug 'chriskempson/base16-vim'  " colors!
-
-" Syntax
+Plug 'frigoeu/psc-ide-vim', {'for': 'purescript'}  " purescript compiling checker
+Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}  " java language server
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-java'}  " code completion based on lang server
+Plug 'hdiniz/vim-gradle', {'for': ['gradle']}
 Plug 'neomake/neomake', {'on': 'Neomake'}  " maker and linter
 Plug 'benjie/neomake-local-eslint.vim'  " auto lint with .eslintrc
 Plug 'drewschrauf/neomake-local-tslint.vim'  " auto lint with .tslintrc
@@ -48,6 +46,10 @@ Plug 'lambdatoast/elm.vim', {'for': 'elm'}
 Plug 'nikvdp/ejs-syntax', {'for': 'ejs'}
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'vim-pandoc/vim-pandoc-syntax', {'for': 'markdown'}
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
+
+" Themes
+Plug 'chriskempson/base16-vim'  " colors!
+
 
 call plug#end()

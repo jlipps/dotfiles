@@ -66,6 +66,7 @@ let g:ctrlp_mruf_relative = 1
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " neomake
+let g:neomake_java_enabled_makers = []
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_typescript_enabled_makers = ['tslint']
 let g:neomake_json_enabled_makers = ['jsonlint']
@@ -78,6 +79,8 @@ let g:neomake_error_sign={'text': '✗', 'texthl': 'Error'}
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#sources = {}
 
 " nerdtree options
 let NERDTreeIgnore=['\.pyc$', '\~$']

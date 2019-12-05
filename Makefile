@@ -2,6 +2,7 @@
 
 nvim_config := $$HOME/.config/nvim
 nvim_link := $(nvim_config)/init.vim
+coc_link := $(nvim_config)/coc-settings.json
 nvim_home := $$HOME/.local/share/nvim
 git_config := $$HOME/.gitconfig
 git_ignore := $$HOME/.gitignore
@@ -55,6 +56,7 @@ eressea:
 	mkdir -p $(nvim_config)
 	mkdir -p $(nvim_home)/site
 	test -L $(nvim_link) || ln -s $$(pwd)/vim/init_bootstrap.vimrc $(nvim_link)
+	ln -s $(coc_link) || ln -s $$(pwd)/vim/coc-settings.json $(coc_link)
 	curl -fLo $(nvim_home)/site/autoload/plug.vim --create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	nvim +PlugInstall +qa
@@ -83,7 +85,7 @@ eressea:
 
 .make.java: brew
 	brew tap AdoptOpenJDK/openjdk
-	brew cask install adoptopenjdk8
+	brew cask install adoptopenjdk11
 	touch .make.java
 
 .make.tmux: brew
@@ -98,9 +100,10 @@ eressea:
 	npm install -g mocha
 	npm install -g gulp
 	npm install -g eslint
+	npm install -g jsonlint
+	npm install -g yarn
 	touch .make.node-libs
 
 .make.brew-libs: brew
-	brew install the_silver_searcher
-	brew install reattach-to-user-namespace
+	brew install the_silver_searcher reattach-to-user-namespace jq gradle
 	touch .make.brew-libs
