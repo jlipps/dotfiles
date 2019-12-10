@@ -3,8 +3,13 @@ alias ls="ls -G"
 alias nvim="reattach-to-user-namespace nvim"
 alias mux="tmuxinator"
 alias gitkondo="git branch | grep -v master | xargs git branch -D"
-
 alias ll="ls -la"
+alias mm="mocha -t 90000 -R spec -s 5000"
+alias mmh="mm --harmony"
+alias mmc="mm --compilers coffee:coffee-script"
+alias jsonpp="pbpaste | python -mjson.tool"
+alias nvimplug="vim +PlugInstall +qall"
+alias nvimclean="vim +PlugClean +qall"
 
 # GIT ALIASES
 alias ggs="git status"
@@ -36,10 +41,3 @@ alias ggbrd="git branch -D"
 alias ggcp="git cherry-pick"
 alias ggsui="git submodule update --init"
 alias ggrv="git remote -v"
-
-alias mm="mocha -t 90000 -R spec -s 5000"
-alias mmh="mm --harmony"
-alias mmc="mm --compilers coffee:coffee-script"
-alias jsonpp="pbpaste | python -mjson.tool"
-
-alias nvimplug="vim +PlugInstall +qall"

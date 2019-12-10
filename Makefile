@@ -1,12 +1,14 @@
 .PHONY: mosh brew ssh nvim git lint node python eressea numenor java tmux libs node-libs brew-libs clean-all
 
-nvim_config := $$HOME/.config/nvim
+config := $$HOME/.config
+nvim_config := $(config)/nvim
 nvim_link := $(nvim_config)/init.vim
 coc_link := $(nvim_config)/coc-settings.json
 nvim_home := $$HOME/.local/share/nvim
 git_config := $$HOME/.gitconfig
 git_ignore := $$HOME/.gitignore
 tpm_home := $$HOME/.tmux/plugins
+tmuxinator_home := $(config)/tmuxinator
 eslintrc := $$HOME/.eslintrc
 pep8 := $$HOME/.pep8
 nvm := "$$HOME/.nvm"
@@ -38,7 +40,7 @@ numenor:
 	test -L $$HOME/.zlocal || ln -s $$(pwd)/zsh/zlocal_numenor $$HOME/.zlocal
 
 .make.brew:
-	# /usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	touch .make.brew
 
 .make.mosh: .make.brew
@@ -84,7 +86,7 @@ numenor:
 	touch .make.node
 
 .make.python: .make.brew
-	# brew install python@3
+	 brew install python@3
 	touch .make.python
 
 .make.java: .make.brew
@@ -93,11 +95,12 @@ numenor:
 	touch .make.java
 
 .make.tmux: .make.brew
-	brew install tmux
+	brew install tmux tmuxinator
+	mkdir -p $(config)
 	mkdir -p $(tpm_home)
 	git clone https://github.com/tmux-plugins/tpm $(tpm_home)/tpm
-	ln -s $$(pwd)/tmux/tmux.conf $$HOME/.tmux.conf
-	touch .make.tmux
+	test -L $$HOME/.tmux.conf || ln -s $$(pwd)/tmux/tmux.conf $$HOME/.tmux.conf
+	test -L $(tmuxinator_home) || ln -s $$(pwd)/tmuxinator $(tmuxinator_home)
 
 .make.node-libs: .make.node
 	npm install -g diff-so-fancy
