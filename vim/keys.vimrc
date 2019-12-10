@@ -36,10 +36,6 @@ nnoremap ; :
 " press j and k at same time for esc
 call arpeggio#map('i', '', 0, 'jk', '<Esc>')
 
-" turn deoplete on and off manually with y/Y
-nnoremap <leader>y :call deoplete#disable()<CR>
-nnoremap <leader>Y :call deoplete#enable()<CR>
-
 " toggle tag list and file explorer
 nnoremap <leader>lt :TlistToggle<CR>
 nnoremap <leader>N :NERDTreeToggle<CR>

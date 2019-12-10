@@ -105,6 +105,7 @@ numenor:
 	npm install -g gulp
 	npm install -g eslint
 	npm install -g jsonlint
+	npm install -g markdownlint-cli
 	touch .make.node-libs
 
 .make.brew-libs: .make.brew

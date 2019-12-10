@@ -33,10 +33,6 @@ augroup END
 " :Tab command to set tab width
 :command -nargs=1 Tab set tabstop=<args> shiftwidth=<args> softtabstop=<args>
 
-" turn off deoplete for some file types
-autocmd FileType tex,notes,markdown,md,pandoc,ghmarkdown,text,buffer
-       \ call deoplete#custom#buffer_option('auto_complete', v:false)
-
 
 " --------------------------------
 " Goyo (vim writing env) functions

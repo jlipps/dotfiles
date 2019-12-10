@@ -29,14 +29,13 @@ Plug 'junegunn/limelight.vim', {'on': 'Limelight'}  " powers Goyo
 Plug 'junegunn/vim-easy-align'  " align around a certain character
 Plug 'vim-pandoc/vim-pandoc',  {'for': 'markdown'} " helpful markdown / pandoc stuff
 Plug 'frigoeu/psc-ide-vim', {'for': 'purescript'}  " purescript compiling checker
-Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}  " java language server
+Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile', 'for': ['java']}  " java language server
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-java'}  " code completion based on lang server
 Plug 'hdiniz/vim-gradle', {'for': ['gradle']}
 Plug 'neomake/neomake', {'on': 'Neomake'}  " maker and linter
 Plug 'benjie/neomake-local-eslint.vim'  " auto lint with .eslintrc
 Plug 'drewschrauf/neomake-local-tslint.vim'  " auto lint with .tslintrc
 Plug 'mhartington/nvim-typescript', {'do': './install.sh', 'for': 'typescript'}
-Plug 'shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}  " completion
 Plug 'fatih/vim-go', {'for': 'golang'}
 Plug 'scrooloose/nerdcommenter'  " nice commenting
 Plug 'othree/yajs.vim', {'for': 'javascript'}
