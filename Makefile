@@ -1,4 +1,4 @@
-.PHONY: mosh brew ssh nvim git lint node python eressea numenor java tmux libs node-libs brew-libs clean-all
+.PHONY: mosh brew ssh nvim git lint node python eressea numenor java tmux libs dotnet node-libs brew-libs clean-all
 
 config := $$HOME/.config
 nvim_config := $(config)/nvim
@@ -25,6 +25,7 @@ git: .make.git
 node: .make.node
 python: .make.python
 java: .make.java
+dotnet: .make.dotnet
 tmux: .make.tmux
 libs: node-libs brew-libs
 node-libs: .make.node-libs
@@ -114,3 +115,6 @@ numenor:
 .make.brew-libs: .make.brew
 	brew install the_silver_searcher reattach-to-user-namespace jq gradle
 	touch .make.brew-libs
+
+.make.dotnet: .make.brew
+	brew cask install dotnet-sdk
