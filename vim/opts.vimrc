@@ -67,8 +67,9 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " neomake
 let g:neomake_java_enabled_makers = []
+let g:neomake_cpp_enabled_makers = []
 let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_typescript_enabled_makers = ['tslint']
+let g:neomake_typescript_enabled_makers = []
 let g:neomake_json_enabled_makers = ['jsonlint']
 let g:neomake_python_enabled_makers = ['flake8']
 let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501'], }

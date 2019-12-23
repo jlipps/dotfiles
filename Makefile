@@ -62,7 +62,7 @@ numenor:
 	mkdir -p $(nvim_config)
 	mkdir -p $(nvim_home)/site
 	test -L $(nvim_link) || ln -s $$(pwd)/vim/init_bootstrap.vimrc $(nvim_link)
-	ln -s $(coc_link) || ln -s $$(pwd)/vim/coc-settings.json $(coc_link)
+	test -L $(coc_link) || ln -s $$(pwd)/vim/coc-settings.json $(coc_link)
 	curl -fLo $(nvim_home)/site/autoload/plug.vim --create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	nvim +PlugInstall +qa
@@ -104,12 +104,7 @@ numenor:
 	test -L $(tmuxinator_home) || ln -s $$(pwd)/tmuxinator $(tmuxinator_home)
 
 .make.node-libs: .make.node
-	npm install -g diff-so-fancy
-	npm install -g mocha
-	npm install -g gulp
-	npm install -g eslint
-	npm install -g jsonlint
-	npm install -g markdownlint-cli
+	npm install -g diff-so-fancy mocha gulp eslint jsonlint markdownlint-cli yarn
 	touch .make.node-libs
 
 .make.brew-libs: .make.brew
