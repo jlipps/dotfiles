@@ -22,6 +22,11 @@ if [[ -s "$HOME/.zlocal" ]]; then
     source "$HOME/.zlocal"
 fi
 
+# Bring in secrets if they exist
+if [[ -s "$HOME/.zsecrets" ]]; then
+    source "$HOME/.zsecrets"
+fi
+
 # Set up Path based on any system-dependent stuff
 if [[ ! -z "$ANDROID_HOME" ]]; then
     export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
@@ -63,4 +68,3 @@ _tmuxinator() {
 compdef _tmuxinator tmuxinator mux
 
 ulimit -n 8000
-

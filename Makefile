@@ -1,4 +1,4 @@
-.PHONY: mosh brew ssh nvim git lint node python eressea numenor java tmux libs dotnet node-libs brew-libs clean-all
+.PHONY: mosh brew ssh nvim git lint node python eressea numenor java tmux libs dotnet node-libs brew-libs clean-all secrets
 
 config := $$HOME/.config
 nvim_config := $(config)/nvim
@@ -39,6 +39,14 @@ eressea:
 
 numenor:
 	test -L $$HOME/.zlocal || ln -s $$(pwd)/zsh/zlocal_numenor $$HOME/.zlocal
+
+secrets:
+	if [[ -d secrets ]]; then \
+		cd secrets && git pull origin master && cd ..; \
+	else \
+		git clone git@git.jlipps.com:jlipps/secrets secrets; \
+		test -L $$HOME/.zsecrets || ln -s $$(pwd)/secrets/zsecrets $$HOME/.zsecrets; \
+	fi
 
 .make.brew:
 	/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -108,7 +116,7 @@ numenor:
 	touch .make.node-libs
 
 .make.brew-libs: .make.brew
-	brew install the_silver_searcher reattach-to-user-namespace jq gradle
+	brew install the_silver_searcher reattach-to-user-namespace jq gradle broot
 	touch .make.brew-libs
 
 .make.dotnet: .make.brew
