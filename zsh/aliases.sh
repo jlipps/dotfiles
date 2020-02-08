@@ -10,6 +10,7 @@ alias mmc="mm --compilers coffee:coffee-script"
 alias jsonpp="pbpaste | python -mjson.tool"
 alias nvimplug="vim +PlugInstall +qall"
 alias nvimclean="vim +PlugClean +qall"
+alias hsvpn="sudo openvpn --config ~/.vpn/jlipps.ovpn"
 
 # GIT ALIASES
 alias ggs="git status"
