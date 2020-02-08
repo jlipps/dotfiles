@@ -4,8 +4,13 @@
   "java.import.gradle.enabled": true,
   "java.autobuild.enabled": false,
   "java.maven.downloadSources": true,
+  "java.errors.incompleteClasspath.severity": "ignore",
   "tsserver.enableJavascript": false,
   "tsserver.npm": "~/.nvm/versions/node/v12.14.0/bin",  
+  "python.jediEnabled": false,
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
   "languageserver": {
     "ccls": {
       "command": "ccls",
@@ -17,6 +22,5 @@
          }
        }
     }
-  },
-  "java.errors.incompleteClasspath.severity": "ignore"
+  }
 }
