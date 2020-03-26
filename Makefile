@@ -1,5 +1,16 @@
 .PHONY: mosh brew ssh nvim git lint node python eressea numenor java tmux libs dotnet node-libs brew-libs clean-all secrets
 
+arch = $(shell uname)
+ifeq ($(arch),Linux)
+	install = sudo apk add
+	upgrade = sudo apk add --update
+	python = python3
+else
+	install = brew install
+	upgrade = brew upgrade
+	python = python@3
+endif
+
 config := $$HOME/.config
 nvim_config := $(config)/nvim
 nvim_link := $(nvim_config)/init.vim
@@ -49,11 +60,13 @@ secrets:
 	fi
 
 .make.brew:
-	/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	if [[ "$$(uname)" == "Darwin" ]]; then \
+		/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; \
+	fi
 	touch .make.brew
 
 .make.mosh: .make.brew
-	brew install mosh
+	$(install) mosh
 	touch .make.mosh
 
 .make.shell:
@@ -64,7 +77,7 @@ secrets:
 	touch .make.shell
 
 .make.nvim: .make.git .make.node .make.python
-	brew install neovim || brew upgrade neovim || true
+	$(install) neovim || $(upgrade) neovim || true
 	npm install -g neovim
 	pip3 install --user pynvim
 	mkdir -p $(nvim_config)
@@ -89,13 +102,17 @@ secrets:
 	touch .make.git
 
 .make.node: .make.shell
-	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-	source "$(nvm)/nvm.sh" && nvm install node
+	if [[ "$$(uname)" == "Linux" ]]; then \
+		$(install) nodejs npm; \
+	else \
+		curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash; \
+		source "$(nvm)/nvm.sh" && nvm install --lts; \
+	fi
 	npm install -g yarn  # yarn is necessary for nvim plugin compilation, so install it now
 	touch .make.node
 
 .make.python: .make.brew
-	 brew install python@3
+	$(install) $(python)
 	touch .make.python
 
 .make.java: .make.brew
@@ -104,7 +121,7 @@ secrets:
 	touch .make.java
 
 .make.tmux: .make.brew
-	brew install tmux tmuxinator
+	$(install) tmux tmuxinator
 	mkdir -p $(config)
 	mkdir -p $(tpm_home)
 	git clone https://github.com/tmux-plugins/tpm $(tpm_home)/tpm
@@ -116,7 +133,7 @@ secrets:
 	touch .make.node-libs
 
 .make.brew-libs: .make.brew
-	brew install the_silver_searcher reattach-to-user-namespace jq gradle broot
+	$(install) the_silver_searcher reattach-to-user-namespace jq gradle broot
 	touch .make.brew-libs
 
 .make.dotnet: .make.brew
