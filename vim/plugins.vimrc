@@ -30,7 +30,6 @@ Plug 'junegunn/vim-easy-align'  " align around a certain character
 Plug 'vim-pandoc/vim-pandoc',  {'for': 'markdown'} " helpful markdown / pandoc stuff
 Plug 'frigoeu/psc-ide-vim', {'for': 'purescript'}  " purescript compiling checker
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': [':CocInstall coc-java', ':CocInstall coc-omnisharp', ':CocInstall coc-tsserver', ':CocInstall coc-python']}  " code completion based on lang server
-Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile', 'for': ['java']}  " java language server
 Plug 'hdiniz/vim-gradle', {'for': ['gradle']}
 Plug 'neomake/neomake', {'on': 'Neomake'}  " maker and linter
 Plug 'benjie/neomake-local-eslint.vim'  " auto lint with .eslintrc

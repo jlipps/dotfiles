@@ -32,6 +32,12 @@ if [[ ! -z "$ANDROID_HOME" ]]; then
     export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
 fi
 
+# Pyenv / Python
+if [[ "$(which pyenv)" != "" ]]; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
 if [[ -s "$HOME/.aliases.sh" ]]; then
     source "$HOME/.aliases.sh"
 fi

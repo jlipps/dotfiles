@@ -38,6 +38,23 @@ source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.
 # Cloud Grey
 export CG_HOME=/Users/jlipps/Code/cloudgrey
 
+# Headspin
+export HEADSPIN_HOME=/Users/jlipps/Code/headspin
+export HS_ENV=local
+export ANSIBLE_HOST_KEY_CHECKING=False
+export PIP_DISABLE_PIP_VERSION_CHECK=1
+
+alias h="cd $HEADSPIN_HOME"
+alias uiend="python $HEADSPIN_HOME/platform/headspin/uiend/server.py;"
+alias internal-api="python $HEADSPIN_HOME/platform/headspin/internal_api/server.py;"
+alias t='nosetests -s -v'
+alias p='hssecurity password create'
+export PYTHONPATH="$PYTHONPATH:$HEADSPIN_HOME/devtools:$HEADSPIN_HOME/common:$HEADSPIN_HOME/platform:$HEADSPIN_HOME/mar:$HEADSPIN_HOME/ops"
+export PATH="$PATH:$HEADSPIN_HOME/devtools/bin:$HEADSPIN_HOME/ops/bin"
+
+# old mysql for headspin
+export PATH="/usr/local/Cellar/mysql@5.7/5.7.29/bin:$PATH"
+
 # Broot
 if [[ -s "$HOME/Library/Preferences/org.dystroy.broot/launcher/bash/br" ]]; then
     source "$HOME/Library/Preferences/org.dystroy.broot/launcher/bash/br"

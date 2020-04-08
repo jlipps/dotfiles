@@ -29,6 +29,7 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
+nnoremap E ea
 
 " no need to use shift for :
 nnoremap ; :
