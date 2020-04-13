@@ -13,6 +13,7 @@ autocmd FileType php,py,python,java setlocal shiftwidth=4 tabstop=4 softtabstop=
 au BufRead,BufNewFile *.md,*.markdown set filetype=ghmarkdown
 au BufRead,BufNewFile *.mako set filetype=mako
 au BufRead,BufNewFile *.eslintrc,*.jshintrc,*.babelrc set filetype=json
+au BufRead,BufNewFile *.tsx set filetype=typescript.tsx
 au BufRead,BufNewFile Jenkinsfile set filetype=groovy
 
 " Turn on neomake when saving or opening a buffer
