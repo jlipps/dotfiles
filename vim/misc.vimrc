@@ -6,7 +6,7 @@
 autocmd FileType c,coffee,scss,css,styl,jade,md,markdown,rb,cpp,java,php,py,python,html,mako,javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Set tab width based on language
-autocmd FileType html,mako,javascript,typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,mako,javascript,typescripta,typescript.tsx,scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType php,py,python,java setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 " Explicitly set filetype for some less common files
