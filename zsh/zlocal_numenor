@@ -49,6 +49,7 @@ alias uiend="python $HEADSPIN_HOME/platform/headspin/uiend/server.py;"
 alias internal-api="python $HEADSPIN_HOME/platform/headspin/internal_api/server.py;"
 alias t='nosetests -s -v'
 alias p='hssecurity password create'
+alias ap_deploy="curl -X POST https://api.zeit.co/v1/integrations/deploy/$APPIUMPRO_DEPLOY_TOKEN"
 export PYTHONPATH="$PYTHONPATH:$HEADSPIN_HOME/devtools:$HEADSPIN_HOME/common:$HEADSPIN_HOME/platform:$HEADSPIN_HOME/mar:$HEADSPIN_HOME/ops"
 export PATH="$PATH:$HEADSPIN_HOME/devtools/bin:$HEADSPIN_HOME/ops/bin"
 
