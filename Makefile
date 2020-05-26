@@ -1,4 +1,4 @@
-.PHONY: mosh brew ssh nvim git lint node python eressea numenor java tmux libs dotnet node-libs brew-libs clean-all secrets
+.PHONY: mosh brew ssh nvim git lint node python eressea numenor java tmux libs dotnet node-libs brew-libs clean-all secrets pandoc
 
 arch = $(shell uname)
 ifeq ($(arch),Linux)
@@ -16,6 +16,7 @@ nvim_config := $(config)/nvim
 nvim_link := $(nvim_config)/init.vim
 coc_link := $(nvim_config)/coc-settings.json
 nvim_home := $$HOME/.local/share/nvim
+pandoc_home := $$HOME/.local/share/pandoc
 git_config := $$HOME/.gitconfig
 git_ignore := $$HOME/.gitignore
 tpm_home := $$HOME/.tmux/plugins
@@ -33,6 +34,7 @@ shell: .make.shell
 nvim: .make.nvim
 lint: .make.lint
 git: .make.git
+pandoc: .make.pandoc
 node: .make.node
 python: .make.python
 java: .make.java
@@ -100,6 +102,10 @@ secrets:
 	test -L $(git_config) || ln -s $$(pwd)/git/gitconfig $(git_config)
 	test -L $(git_ignore) || ln -s $$(pwd)/git/gitignore $(git_ignore)
 	touch .make.git
+
+.make.pandoc:
+	test -L $(pandoc_home) || ln -s $$(pwd)/pandoc $(pandoc_home)
+	touch .make.pandoc
 
 .make.node: .make.shell
 	if [[ "$$(uname)" == "Linux" ]]; then \

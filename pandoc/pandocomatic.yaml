@@ -39,3 +39,19 @@ templates:
         \fancyhead[R]{\thepage}
     postprocessors:
       - postprocessors/fixbib.sh
+  theology:
+    preprocessors: []
+    pandoc:
+      from: markdown+latex_macros-auto_identifiers
+      to: latex
+      standalone: true
+      filter: pandoc-citeproc
+      bibliography: bibs/regent-master.bib
+      csl: templates/turabian-fullnote-bibliography.csl
+    metadata:
+      author: Jonathan Lipps
+      papersize: letter
+      documentclass: article
+      reference-section-title: Works Cited
+    postprocessors:
+      - postprocessors/fixbib.sh
