@@ -21,7 +21,7 @@ if !exists('g:vscode')
     Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}  " file explorer
     Plug 'kien/ctrlp.vim', {'on': ['CtrlP', 'CtrlPMRU']}  " fuzzy file finder
     Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' " status bar
-    Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': [':CocInstall coc-java', ':CocInstall coc-omnisharp', ':CocInstall coc-tsserver', ':CocInstall coc-python', ':CocInstall coc-eslint']}  " code completion based on lang server
+    Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': [':CocInstall coc-java', ':CocInstall coc-omnisharp', ':CocInstall coc-tsserver', ':CocInstall coc-python', ':CocInstall coc-eslint', ':CocInstall coc-deno']}  " code completion based on lang server
     Plug 'neomake/neomake', {'on': 'Neomake'}  " maker and linter
     Plug 'benjie/neomake-local-eslint.vim'  " auto lint with .eslintrc
     Plug 'drewschrauf/neomake-local-tslint.vim'  " auto lint with .tslintrc

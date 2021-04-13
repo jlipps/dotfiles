@@ -10,6 +10,8 @@ export ANT_HOME="/usr/local/ant"
 export ANDROID_HOME="/usr/local/adt/sdk"
 export ANDROID_SDK_ROOT="$ANDROID_HOME"
 
+export TIZEN_HOME="/Applications/tizen-studio"
+
 export RUBY_BIN="/usr/local/opt/ruby/bin"
 export RUBY_GEMS="/usr/local/lib/ruby/gems/3.0.0/bin"
 export TEX_BIN="/usr/local/texlive/2017/bin/x86_64-darwin"
@@ -18,7 +20,7 @@ export RUST_BIN="$RUST_HOME/bin"
 
 export GENY_BIN="/Applications/Genymotion.app/Contents/MacOS"
 
-export PATH=$PYTHON_USER_HOME/bin:$PYTHON_HOMEBREW_HOME:$JAVA_HOME/bin:/usr/libexec:$ANT_HOME/bin:/usr/local/share/python:/usr/local/xle/bin:/Users/jlipps/bin:/Users/jlipps/bin/google-cloud-sdk/bin:/usr/local/git/bin:/usr/local/share/npm/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/build-tools/28.0.1:$TEX_BIN:$HASKELL_BIN:$GENY_BIN:$RUBY_GEMS:$RUBY_BIN:$RUST_BIN:$PATH
+export PATH=$PYTHON_USER_HOME/bin:$PYTHON_HOMEBREW_HOME:$JAVA_HOME/bin:/usr/libexec:$ANT_HOME/bin:/usr/local/share/python:/usr/local/xle/bin:/Users/jlipps/bin:/Users/jlipps/bin/google-cloud-sdk/bin:/usr/local/git/bin:/usr/local/share/npm/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/build-tools/28.0.1:$TEX_BIN:$HASKELL_BIN:$GENY_BIN:$RUBY_GEMS:$RUBY_BIN:$RUST_BIN:$TIZEN_HOME/tools:$TIZEN_HOME/tools/ide/bin:$PATH
 
 #Setup virtualenvwrapper
 export WORKON_HOME=/usr/local/env
