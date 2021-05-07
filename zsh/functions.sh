@@ -55,3 +55,8 @@ function alert() {
     and_sound_name="sound name \"$sound\""
     /usr/bin/osascript -e "$display $with_title $and_sound_name"
 }
+
+function newmux() {
+    tmux new-session -d -s "$1" -n "$1"
+    tmux attach-session -t "$1"
+}
