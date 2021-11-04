@@ -62,19 +62,24 @@ let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_by_filename = 1
 let g:ctrlp_mruf_relative = 1
 
+" svelte
+let g:svelte_indent_script = 0
+let g:svelte_indent_style = 0
+
 " react
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " neomake
 let g:neomake_java_enabled_makers = []
 let g:neomake_cpp_enabled_makers = []
-let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = []
 let g:neomake_typescript_enabled_makers = []
 let g:neomake_json_enabled_makers = ['jsonlint']
 let g:neomake_python_enabled_makers = ['flake8']
 let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501'], }
 let g:neomake_markdown_enabled_makers = ['markdownlint']
-let g:neomake_scss_enabled_makers = ['scsslint']
+let g:neomake_scss_enabled_makers = []
+let g:neomake_css_enabled_makers = []
 let g:neomake_warning_sign={'text': '⚠', 'texthl': 'Todo'}
 let g:neomake_error_sign={'text': '✗', 'texthl': 'Error'}
 

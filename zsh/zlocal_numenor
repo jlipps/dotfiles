@@ -1,5 +1,5 @@
 # PATH
-export PYTHON_USER_HOME="/Users/jlipps/Library/Python/3.7"
+export PYTHON_USER_HOME="/Users/jlipps/Library/Python/3.9"
 export PYTHON_HOMEBREW_HOME="/usr/local/opt/python/libexec/bin"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home"
 export GOPATH="/Users/jlipps/Code/golang"

@@ -25,6 +25,9 @@ end
 " Misc tweaks
 " -----------
 
+" allow easy 'deleting' of a current buffer
+nmap ,x :b#<bar>bd#<CR>
+
 " fix too long of a delay after hitting ESC to get back into normal mode
 set ttimeoutlen=10
 augroup FastEscape

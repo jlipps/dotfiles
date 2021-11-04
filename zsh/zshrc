@@ -34,7 +34,7 @@ fi
 
 # Pyenv / Python
 if [[ "$(which pyenv)" != "" ]]; then
-    eval "$(pyenv init -)"
+    eval "$(pyenv init --path)"
     eval "$(pyenv virtualenv-init -)"
 fi
 

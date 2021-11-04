@@ -21,13 +21,13 @@ if !exists('g:vscode')
     Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}  " file explorer
     Plug 'kien/ctrlp.vim', {'on': ['CtrlP', 'CtrlPMRU']}  " fuzzy file finder
     Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' " status bar
-    Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': [':CocInstall coc-java', ':CocInstall coc-omnisharp', ':CocInstall coc-tsserver', ':CocInstall coc-python', ':CocInstall coc-eslint', ':CocInstall coc-deno']}  " code completion based on lang server
+    Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-java coc-omnisharp coc-tsserver coc-python coc-eslint coc-deno coc-svelte coc-css'}  " code completion based on lang server
     Plug 'neomake/neomake', {'on': 'Neomake'}  " maker and linter
     Plug 'benjie/neomake-local-eslint.vim'  " auto lint with .eslintrc
     Plug 'drewschrauf/neomake-local-tslint.vim'  " auto lint with .tslintrc
     Plug 'fatih/vim-go', {'for': 'golang'}
+    Plug 'evanleck/vim-svelte', {'branch': 'main'}
     Plug 'vim-scripts/bufkill.vim', {'on': 'BD'}  " kill buffer but not window
-    Plug 'jlipps/vim-bda', {'on': 'Bda'}  " delete all buffers
     Plug 'airblade/vim-gitgutter'  " show git status in gutter
     Plug 'nathanaelkane/vim-indent-guides'  " display indent level
     Plug 'junegunn/goyo.vim', {'on': 'Goyo'}  " nice focused writing environment
