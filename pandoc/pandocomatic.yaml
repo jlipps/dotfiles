@@ -39,6 +39,15 @@ templates:
         \fancyhead[R]{\thepage}
     postprocessors:
       - postprocessors/fixbib.sh
+  regent_docx:
+    preprocessors: []
+    pandoc:
+      from: markdown+latex_macros-auto_identifiers
+      to: docx
+      standalone: true
+      citeproc: true
+      bibliography: bibs/regent-master.bib
+      csl: csl/turabian-fullnote-bibliography.csl
   theology:
     preprocessors: []
     pandoc:
