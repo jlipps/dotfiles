@@ -127,12 +127,12 @@ secrets:
 	touch .make.java
 
 .make.tmux: .make.brew
-	$(install) tmux tmuxinator
+	$(install) tmux # tmuxinator
 	mkdir -p $(config)
 	mkdir -p $(tpm_home)
 	git clone https://github.com/tmux-plugins/tpm $(tpm_home)/tpm
 	test -L $$HOME/.tmux.conf || ln -s $$(pwd)/tmux/tmux.conf $$HOME/.tmux.conf
-	test -L $(tmuxinator_home) || ln -s $$(pwd)/tmuxinator $(tmuxinator_home)
+	# test -L $(tmuxinator_home) || ln -s $$(pwd)/tmuxinator $(tmuxinator_home)
 
 .make.node-libs: .make.node
 	npm install -g diff-so-fancy mocha gulp eslint jsonlint markdownlint-cli yarn

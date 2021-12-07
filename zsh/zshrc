@@ -33,7 +33,7 @@ if [[ ! -z "$ANDROID_HOME" ]]; then
 fi
 
 # Pyenv / Python
-if [[ "$(which pyenv)" != "" ]]; then
+if which pyenv &> /dev/null; then
     eval "$(pyenv init --path)"
     eval "$(pyenv virtualenv-init -)"
 fi
