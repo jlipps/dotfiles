@@ -1,32 +1,31 @@
 # PATH
 export BREW_HOME="/opt/homebrew"
-export PYTHON_USER_HOME="/Users/jlipps/Library/Python/3.9"
-export PYTHON_HOMEBREW_HOME="/usr/local/opt/python/libexec/bin"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home"
+export MACOS_PYTHON_HOME="/Users/jlipps/Library/Python/3.9"
+export JAVA_HOME=""
 export GOPATH="/Users/jlipps/Code/golang"
-export GOROOT="/usr/local/opt/go/libexec"
-export RUST_HOME="$HOME/.cargo"
+export GOROOT=""
 
-export ANT_HOME="/usr/local/ant"
+export ANT_HOME=""
 export ANDROID_HOME="/usr/local/adt/sdk"
 export ANDROID_SDK_ROOT="$ANDROID_HOME"
+export ANDROID_BUILD_TOOLS="$ANDROID_HOME/build-tools/28.0.1"
+export ANDROID_PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_BUILD_TOOLS"
 
 export TIZEN_HOME="/Applications/tizen-studio"
+export TIZEN_PATH="$TIZEN_HOME/tools:$TIZEN_HOME/tools/ide/bin"
 
-export RUBY_BIN="/usr/local/opt/ruby/bin"
-export RUBY_GEMS="/usr/local/lib/ruby/gems/3.0.0/bin"
-export TEX_BIN="/usr/local/texlive/2017/bin/x86_64-darwin"
-export HASKELL_BIN="/Users/jlipps/Library/Haskell/bin"
-export RUST_BIN="$RUST_HOME/bin"
+# TODO if i need these
+export RUBY_BIN=""
+export RUBY_GEMS=""
+export RUST_HOME="$HOME/.cargo"
+export RUST_BIN=""
 
-export GENY_BIN="/Applications/Genymotion.app/Contents/MacOS"
-
-export PATH="$BREW_HOME/bin:$PYTHON_USER_HOME/bin:$PYTHON_HOMEBREW_HOME:$JAVA_HOME/bin:/usr/libexec:$ANT_HOME/bin:/usr/local/share/python:/usr/local/xle/bin:/Users/jlipps/bin:/Users/jlipps/bin/google-cloud-sdk/bin:/usr/local/git/bin:/usr/local/share/npm/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/build-tools/28.0.1:$TEX_BIN:$HASKELL_BIN:$GENY_BIN:$RUBY_GEMS:$RUBY_BIN:$RUST_BIN:$TIZEN_HOME/tools:$TIZEN_HOME/tools/ide/bin:$PATH"
+export PATH="$BREW_HOME/bin:$MACOS_PYTHON_HOME/bin:$JAVA_HOME/bin:/usr/libexec:/Users/jlipps/bin:$ANDROID_PATH:$TIZEN_PATH:$PATH"
 
 #Setup virtualenvwrapper
-export WORKON_HOME=/usr/local/env
-export PYTHON_SHARE="/usr/local/share/python"
-export PIPENV_VENV_IN_PROJECT=1
+#export WORKON_HOME=/usr/local/env
+#export PYTHON_SHARE="/usr/local/share/python"
+#export PIPENV_VENV_IN_PROJECT=1
 
 # Gcloud
 # source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
@@ -36,28 +35,8 @@ export PIPENV_VENV_IN_PROJECT=1
 export CG_HOME=/Users/jlipps/Code/gh/cloudgrey
 
 # Headspin
-export HEADSPIN_HOME=/Users/jlipps/Code/gh/projectxyzio
-export HS_ENV=local
 export HS_SANDBOX=172.31.22.236
-export ANSIBLE_HOST_KEY_CHECKING=False
-export PIP_DISABLE_PIP_VERSION_CHECK=1
-
-alias h="cd $HEADSPIN_HOME"
-# alias uiend="python $HEADSPIN_HOME/platform/headspin/uiend/server.py;"
-# alias internal-api="python $HEADSPIN_HOME/platform/headspin/internal_api/server.py;"
-# alias t='nosetests -s -v'
-# alias p='hssecurity password create'
-alias hsemp='hsedu evaluation mark passed --email jlipps@headspin.io --feedback "Looks good! " $(pbpaste)'
-alias hsemf='hsedu evaluation mark failed --email jlipps@headspin.io $(pbpaste)'
-alias hsels='hsedu evaluation ls --status submitted --limit 25'
-function ap_deploy() {
-    curl -X POST https://api.zeit.co/v1/integrations/deploy/$APPIUMPRO_DEPLOY_TOKEN
-}
-export PYTHONPATH="$PYTHONPATH:$HEADSPIN_HOME/devtools:$HEADSPIN_HOME/common:$HEADSPIN_HOME/platform:$HEADSPIN_HOME/mar:$HEADSPIN_HOME/ops:$HEADSPIN_HOME/pbox"
-export PATH="$PATH:$HEADSPIN_HOME/devtools/bin:$HEADSPIN_HOME/ops/bin"
-
-# old mysql for headspin
-# export PATH="/usr/local/Cellar/mysql@5.7/5.7.29/bin:$PATH"
+alias h="ssh -t $HS_SANDBOX tmux"
 
 # Broot
 if [[ -s "$HOME/Library/Preferences/org.dystroy.broot/launcher/bash/br" ]]; then

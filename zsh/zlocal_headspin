@@ -1,0 +1,19 @@
+# Headspin
+export HEADSPIN_HOME="$HOME/headspinio"
+export HS_ENV=local
+export ANSIBLE_HOST_KEY_CHECKING=False
+export PIP_DISABLE_PIP_VERSION_CHECK=1
+
+alias h="cd $HEADSPIN_HOME"
+# alias uiend="python $HEADSPIN_HOME/platform/headspin/uiend/server.py;"
+# alias internal-api="python $HEADSPIN_HOME/platform/headspin/internal_api/server.py;"
+# alias t='nosetests -s -v'
+# alias p='hssecurity password create'
+alias hsemp='hsedu evaluation mark passed --email jlipps@headspin.io --feedback "Looks good! " $(pbpaste)'
+alias hsemf='hsedu evaluation mark failed --email jlipps@headspin.io $(pbpaste)'
+alias hsels='hsedu evaluation ls --status submitted --limit 25'
+function ap_deploy() {
+    curl -X POST https://api.zeit.co/v1/integrations/deploy/$APPIUMPRO_DEPLOY_TOKEN
+}
+export PYTHONPATH="$PYTHONPATH:$HEADSPIN_HOME/devtools:$HEADSPIN_HOME/common:$HEADSPIN_HOME/platform:$HEADSPIN_HOME/mar:$HEADSPIN_HOME/ops:$HEADSPIN_HOME/pbox"
+export PATH="$PATH:$HEADSPIN_HOME/devtools/bin:$HEADSPIN_HOME/ops/bin"
