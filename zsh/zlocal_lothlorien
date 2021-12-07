@@ -36,7 +36,7 @@ export CG_HOME=/Users/jlipps/Code/gh/cloudgrey
 
 # Headspin
 export HS_SANDBOX=172.31.22.236
-alias h="ssh -t $HS_SANDBOX tmux"
+alias h="ssh -t $HS_SANDBOX tmux new-session -A -s main"
 
 # Broot
 if [[ -s "$HOME/Library/Preferences/org.dystroy.broot/launcher/bash/br" ]]; then
