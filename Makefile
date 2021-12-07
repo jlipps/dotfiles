@@ -2,12 +2,17 @@
 
 arch = $(shell uname)
 ifeq ($(arch),Linux)
-	install = sudo apt install
-	upgrade = sudo apt update
+	install = sudo apt install -y
+	update = sudo apt update
+	upgrade = sudo apt install -y
+	python = python@2
+	pip = pip
 else
 	install = brew install
+	update = brew update
 	upgrade = brew upgrade
 	python = python@3
+	pip = pip3
 endif
 
 config := $$HOME/.config
@@ -52,6 +57,9 @@ eressea:
 numenor:
 	test -L $$HOME/.zlocal || ln -s $$(pwd)/zsh/zlocal_numenor $$HOME/.zlocal
 
+headspin:
+	test -L $$HOME/.zlocal || ln -s $$(pwd)/zsh/zlocal_headspin $$HOME/.zlocal
+
 secrets:
 	if [[ -d secrets ]]; then \
 		cd secrets && git pull origin master && cd ..; \
@@ -71,6 +79,9 @@ secrets:
 	touch .make.mosh
 
 .make.shell:
+	if [[ "$$(uname)" == "Linux" ]]; then \
+		$(install) zsh; \
+	fi
 	git clone --recursive https://github.com/sorin-ionescu/prezto.git $$(pwd)/zprezto
 	ln -s $$(pwd)/zprezto $$HOME/.zprezto
 	for rcfile in $$(ls zsh); do ln -s "$$(pwd)/zsh/$$rcfile" "$$HOME/.$${rcfile}"; done
@@ -78,9 +89,13 @@ secrets:
 	touch .make.shell
 
 .make.nvim: .make.git .make.node .make.python
-	$(install) neovim || $(upgrade) neovim || true
+	if [[ "$$(uname)" == "Linux" ]]; then \
+		sudo add-apt-repository -y ppa:neovim-ppa/stable; \
+		$(update); \
+	fi
+	$(install) neovim || true
 	npm install -g neovim
-	pip3 install --user pynvim
+	$(pip) install --user pynvim
 	mkdir -p $(nvim_config)
 	mkdir -p $(nvim_home)/site
 	test -L $(nvim_link) || ln -s $$(pwd)/vim/init_bootstrap.vimrc $(nvim_link)
@@ -107,12 +122,8 @@ secrets:
 	touch .make.pandoc
 
 .make.node: .make.shell
-	if [[ "$$(uname)" == "Linux" ]]; then \
-		$(install) nodejs npm; \
-	else \
-		curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash; \
-		source "$(nvm)/nvm.sh" && nvm install --lts; \
-	fi
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+	source $(nvm)/nvm.sh && nvm install --lts
 	npm install -g yarn  # yarn is necessary for nvim plugin compilation, so install it now
 	touch .make.node
 

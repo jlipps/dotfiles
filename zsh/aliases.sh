@@ -1,6 +1,8 @@
 # ALIASES
 alias ls="ls -G"
-alias nvim="reattach-to-user-namespace nvim"
+if [[ "$(uname)" == "Darwin" ]]; then
+	alias nvim="reattach-to-user-namespace nvim"
+fi
 alias mux="tmuxinator"
 alias gitkondo="git branch | grep -v master | xargs git branch -D"
 alias ll="ls -la"
