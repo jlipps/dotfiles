@@ -2,9 +2,8 @@
 
 arch = $(shell uname)
 ifeq ($(arch),Linux)
-	install = sudo apk add
-	upgrade = sudo apk add --update
-	python = python3
+	install = sudo apt install
+	upgrade = sudo apt update
 else
 	install = brew install
 	upgrade = brew upgrade
