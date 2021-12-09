@@ -105,6 +105,9 @@ secrets:
 	nvim +PlugInstall +qa
 	rm -rf $(nvim_link)
 	ln -s $$(pwd)/vim/init.vimrc $(nvim_link)
+	if [[ "$$(uname)" == "Darwin" ]]; then \
+		ln -s $$(pwd)/vim/local_lothlorien.vimrc $$(pwd)/vim/local.vimrc
+	fi
 	touch .make.nvim
 
 .make.lint:

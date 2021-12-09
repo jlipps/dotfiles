@@ -1,7 +1,7 @@
 # PATH
 export BREW_HOME="/opt/homebrew"
 export MACOS_PYTHON_HOME="/Users/jlipps/Library/Python/3.9"
-export JAVA_HOME=""
+export JAVA_HOME="/opt/homebrew/Cellar/openjdk/17.0.1_1"
 export GOPATH="/Users/jlipps/Code/golang"
 export GOROOT=""
 
@@ -14,13 +14,15 @@ export ANDROID_PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROI
 export TIZEN_HOME="/Applications/tizen-studio"
 export TIZEN_PATH="$TIZEN_HOME/tools:$TIZEN_HOME/tools/ide/bin"
 
+export OPENVPN_PATH="$BREW_HOME/opt/openvpn/sbin"
+
 # TODO if i need these
 export RUBY_BIN=""
 export RUBY_GEMS=""
 export RUST_HOME="$HOME/.cargo"
 export RUST_BIN=""
 
-export PATH="$BREW_HOME/bin:$MACOS_PYTHON_HOME/bin:$JAVA_HOME/bin:/usr/libexec:/Users/jlipps/bin:$ANDROID_PATH:$TIZEN_PATH:$PATH"
+export PATH="$BREW_HOME/bin:$MACOS_PYTHON_HOME/bin:$JAVA_HOME/bin:/usr/libexec:/Users/jlipps/bin:$OPENVPN_PATH:$ANDROID_PATH:$TIZEN_PATH:$PATH"
 
 #Setup virtualenvwrapper
 #export WORKON_HOME=/usr/local/env
@@ -37,8 +39,11 @@ export CG_HOME=/Users/jlipps/Code/gh/cloudgrey
 # Headspin
 export HS_SANDBOX=172.31.22.236
 alias h="ssh -t $HS_SANDBOX tmux new-session -A -s main"
+alias hs="cd ~/Code/gh/projectxyzio"
 
 # Broot
 if [[ -s "$HOME/Library/Preferences/org.dystroy.broot/launcher/bash/br" ]]; then
     source "$HOME/Library/Preferences/org.dystroy.broot/launcher/bash/br"
 fi
+
+alias dotfiles="cd ~/Code/gh/jlipps/dotfiles"
