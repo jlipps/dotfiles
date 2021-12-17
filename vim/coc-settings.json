@@ -1,10 +1,10 @@
 {
   "java.completion.enabled": true,
-  "java.configuration.updateBuildConfiguration": "interactive",
+  "java.configuration.updateBuildConfiguration": "always",
   "java.import.gradle.enabled": true,
   "java.autobuild.enabled": false,
+  "java.project.referencedLibraries": "~/.gradle/caches/**",
   "java.maven.downloadSources": true,
-  "java.errors.incompleteClasspath.severity": "ignore",
   "tsserver.enableJavascript": true,
   "tsserver.npm": "~/.nvm/versions/node/v14.17.4/bin",  
   "python.jediEnabled": false,
