@@ -4,3 +4,4 @@ ServerAliveInterval 60
 TCPKeepAlive yes
 UseRoaming no
 AddKeysToAgent yes
+PubkeyAcceptedKeyTypes +ssh-rsa
