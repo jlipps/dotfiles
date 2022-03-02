@@ -40,9 +40,10 @@ if !exists('g:vscode')
     Plug 'lambdatoast/elm.vim', {'for': 'elm'}
     Plug 'nikvdp/ejs-syntax', {'for': 'ejs'}
     Plug 'lervag/vimtex', {'for': 'tex'}
-    Plug 'vim-pandoc/vim-pandoc-syntax', {'for': 'markdown'}
+    Plug 'plasticboy/vim-markdown', {'for': ['markdown', 'md', 'markdown.pandoc', 'ghmarkdown']}
+    Plug 'vim-pandoc/vim-pandoc-syntax', {'for': ['markdown', 'md', 'markdown.pandoc', 'ghmarkdown']}
+    Plug 'godlygeek/tabular'
     Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
-    Plug 'vim-pandoc/vim-pandoc',  {'for': 'markdown'} " helpful markdown / pandoc stuff
 end
 Plug 'solars/github-vim', {'on': 'GithubOpen'}  " open file in github
 Plug 'mileszs/ack.vim', {'on': 'Ack'}  " search files

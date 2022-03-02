@@ -78,6 +78,7 @@ let g:neomake_json_enabled_makers = ['jsonlint']
 let g:neomake_python_enabled_makers = ['flake8']
 let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501'], }
 let g:neomake_markdown_enabled_makers = ['markdownlint']
+let g:neomake_markdown_markdownlint_maker = { 'args': ['--disable', 'MD013'] }
 let g:neomake_scss_enabled_makers = []
 let g:neomake_css_enabled_makers = []
 let g:neomake_warning_sign={'text': '⚠', 'texthl': 'Todo'}
@@ -97,3 +98,16 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_auto_colors = 1
+
+" markdown
+" disable header folding
+let g:vim_markdown_folding_disabled = 1
+" do not use conceal feature, the implementation is not so good
+let g:vim_markdown_conceal = 0
+" disable math tex conceal feature
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+" support front matter of various format
+let g:vim_markdown_frontmatter = 1  " for YAML format
+let g:vim_markdown_toml_frontmatter = 1  " for TOML format
+let g:vim_markdown_json_frontmatter = 1  " for JSON format

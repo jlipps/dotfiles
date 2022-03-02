@@ -10,7 +10,7 @@ autocmd FileType html,mako,javascript,typescripta,typescript.tsx,scss setlocal s
 autocmd FileType php,py,python,java setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 " Explicitly set filetype for some less common files
-au BufRead,BufNewFile *.md,*.markdown set filetype=ghmarkdown
+au BufRead,BufNewFile *.md,*.markdown set filetype=markdown.pandoc
 au BufRead,BufNewFile *.mako set filetype=mako
 au BufRead,BufNewFile *.eslintrc,*.jshintrc,*.babelrc set filetype=json
 au BufRead,BufNewFile *.tsx set filetype=typescript.tsx
