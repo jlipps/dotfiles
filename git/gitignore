@@ -15,3 +15,4 @@ Gemfile.lock
 npm-debug.log
 .vscode
 .ccls-cache
+.vim
