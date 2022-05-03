@@ -16,13 +16,15 @@ export TIZEN_PATH="$TIZEN_HOME/tools:$TIZEN_HOME/tools/ide/bin"
 
 export OPENVPN_PATH="$BREW_HOME/opt/openvpn/sbin"
 
+export PLAYDATE_SDK_PATH="/Users/jlipps/Developer/PlaydateSDK"
+
 # TODO if i need these
 export RUBY_BIN=""
 export RUBY_GEMS=""
 export RUST_HOME="$HOME/.cargo"
 export RUST_BIN=""
 
-export PATH="$BREW_HOME/bin:$MACOS_PYTHON_HOME/bin:$JAVA_HOME/bin:/usr/libexec:/Users/jlipps/bin:$OPENVPN_PATH:$ANDROID_PATH:$TIZEN_PATH:$PATH"
+export PATH="$BREW_HOME/bin:$MACOS_PYTHON_HOME/bin:$JAVA_HOME/bin:/usr/libexec:/Users/jlipps/bin:$OPENVPN_PATH:$ANDROID_PATH:$TIZEN_PATH:$PLAYDATE_SDK_PATH/bin:$PATH"
 
 #Setup virtualenvwrapper
 #export WORKON_HOME=/usr/local/env

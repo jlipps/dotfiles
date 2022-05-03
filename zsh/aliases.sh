@@ -13,6 +13,7 @@ alias jsonpp="pbpaste | python -mjson.tool"
 alias nvimplug="vim +PlugInstall +qall"
 alias nvimclean="vim +PlugClean +qall"
 alias hsvpn="sudo openvpn --config ~/.vpn/jlipps.ovpn"
+alias npr="npm exec --"
 
 # GIT ALIASES
 alias ggs="git status"
