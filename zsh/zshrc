@@ -74,3 +74,10 @@ _tmuxinator() {
 compdef _tmuxinator tmuxinator mux
 
 ulimit -n 8000
+
+# bun completions
+[ -s "/Users/jlipps/.bun/_bun" ] && source "/Users/jlipps/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/jlipps/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

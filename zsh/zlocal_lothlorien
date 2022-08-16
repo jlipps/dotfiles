@@ -13,6 +13,8 @@ export ANDROID_PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROI
 
 export TIZEN_HOME="/Applications/tizen-studio"
 export TIZEN_PATH="$TIZEN_HOME/tools:$TIZEN_HOME/tools/ide/bin"
+export LG_WEBOS_TV_SDK_HOME="/Users/jlipps/bin/webos"
+export WEBOS_CLI_TV="$LG_WEBOS_TV_SDK_HOME/CLI/bin"
 
 export OPENVPN_PATH="$BREW_HOME/opt/openvpn/sbin"
 
@@ -24,7 +26,7 @@ export RUBY_GEMS=""
 export RUST_HOME="$HOME/.cargo"
 export RUST_BIN=""
 
-export PATH="$BREW_HOME/bin:$MACOS_PYTHON_HOME/bin:$JAVA_HOME/bin:/usr/libexec:/Users/jlipps/bin:$OPENVPN_PATH:$ANDROID_PATH:$TIZEN_PATH:$PLAYDATE_SDK_PATH/bin:$PATH"
+export PATH="$BREW_HOME/bin:$MACOS_PYTHON_HOME/bin:$JAVA_HOME/bin:/usr/libexec:/Users/jlipps/bin:$OPENVPN_PATH:$ANDROID_PATH:$TIZEN_PATH:$PLAYDATE_SDK_PATH/bin:$PATH:$WEBOS_CLI_TV"
 
 #Setup virtualenvwrapper
 #export WORKON_HOME=/usr/local/env

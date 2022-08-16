@@ -17,18 +17,6 @@ function version_and_publish() {
     npm publish
 }
 
-function remux() {
-    tmux -2 -L $1 attach-session -t $1
-}
-
-function winname() {
-    tmux rename-window $1
-}
-
-function pane_id_for_window_spec() {
-    tmux list-panes -s -F "#I.#P #D" | grep "$1\.$2 %[0-9]" | tail -c -2
-}
-
 function mult_replace() {
   for file in `ag -l $1`
     do perl -pi -e "s|$1|$2|g;" $file
@@ -58,5 +46,26 @@ function alert() {
 
 function newmux() {
     tmux new-session -d -s "$1" -n "$1"
+    tmux split-window -v -t "$1:1"
+    tmux split-window -h -t "$1:1.2"
+    sleep 0.3
+    tmux select-pane -t "$1:1.1"
+    tmux send-keys -t "$1:1.1" "tmux resize-pane -y \"65%\"" C-m
+    tmux send-keys -t "$1:1.1" nvim C-m
+    sleep 0.3
+    tmux send-keys -t "$1:1.1" ",N"
     tmux attach-session -t "$1"
 }
+
+function remux() {
+    tmux -2 -L $1 attach-session -t $1
+}
+
+function winname() {
+    tmux rename-window $1
+}
+
+function pane_id_for_window_spec() {
+    tmux list-panes -s -F "#I.#P #D" | grep "$1\.$2 %[0-9]" | tail -c -2
+}
+

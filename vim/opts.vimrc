@@ -75,8 +75,7 @@ let g:neomake_cpp_enabled_makers = []
 let g:neomake_javascript_enabled_makers = []
 let g:neomake_typescript_enabled_makers = []
 let g:neomake_json_enabled_makers = ['jsonlint']
-let g:neomake_python_enabled_makers = ['flake8']
-let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501'], }
+let g:neomake_python_enabled_makers = []
 let g:neomake_markdown_enabled_makers = ['markdownlint']
 let g:neomake_markdown_markdownlint_maker = { 'args': ['--disable', 'MD013'] }
 let g:neomake_scss_enabled_makers = []

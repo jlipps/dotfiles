@@ -2,6 +2,11 @@ IdentityFile ~/.ssh/id_rsa
 
 ServerAliveInterval 60
 TCPKeepAlive yes
-UseRoaming no
 AddKeysToAgent yes
+ForwardAgent yes
 PubkeyAcceptedKeyTypes +ssh-rsa
+HostkeyAlgorithms +ssh-rsa
+
+Host hsdev
+    HostName 172.31.22.236
+    User jlipps
