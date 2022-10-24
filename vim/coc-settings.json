@@ -6,7 +6,7 @@
   "java.project.referencedLibraries": "~/.gradle/caches/**",
   "java.maven.downloadSources": true,
   "tsserver.enableJavascript": true,
-  "tsserver.npm": "~/.nvm/versions/node/v14.17.4/bin",  
+  "tsserver.npm": "~/.nvm/versions/node/v16.13.1/bin",  
   "python.jediEnabled": false,
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": false,

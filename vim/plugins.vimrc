@@ -18,6 +18,9 @@ end
 
 " IDE
 if !exists('g:vscode')
+    Plug 'gpanders/editorconfig.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/playground'
     Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}  " file explorer
     Plug 'kien/ctrlp.vim', {'on': ['CtrlP', 'CtrlPMRU']}  " fuzzy file finder
     Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' " status bar
@@ -33,10 +36,12 @@ if !exists('g:vscode')
     Plug 'junegunn/goyo.vim', {'on': 'Goyo'}  " nice focused writing environment
     Plug 'junegunn/limelight.vim', {'on': 'Limelight'}  " powers Goyo
     Plug 'frigoeu/psc-ide-vim', {'for': 'purescript'}  " purescript compiling checker
-    Plug 'hdiniz/vim-gradle', {'for': ['gradle']}
-    Plug 'othree/yajs.vim', {'for': 'javascript'}
-    Plug 'othree/es.next.syntax.vim', {'for': 'javascript'}
     Plug 'raichoo/purescript-vim', {'for': 'purescript'}
+    Plug 'hdiniz/vim-gradle', {'for': ['gradle']}
+    "Plug 'othree/yajs.vim', {'for': 'javascript'}
+    "Plug 'othree/es.next.syntax.vim', {'for': 'javascript'}
+    Plug 'jonsmithers/vim-html-template-literals'
+    Plug 'pangloss/vim-javascript'
     Plug 'lambdatoast/elm.vim', {'for': 'elm'}
     Plug 'nikvdp/ejs-syntax', {'for': 'ejs'}
     Plug 'lervag/vimtex', {'for': 'tex'}

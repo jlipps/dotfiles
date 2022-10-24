@@ -7,4 +7,5 @@ execute 'source ' . s:dir . '/local.vimrc'
 if !exists('g:vscode')
     execute 'source ' . s:dir . '/coc.vimrc'
     execute 'source ' . s:dir . '/colors.vimrc'
+    execute 'source ' . s:dir . '/tree-sitter.lua'
 end

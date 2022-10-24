@@ -2,6 +2,7 @@
 export BREW_HOME="/opt/homebrew"
 export MACOS_PYTHON_HOME="/Users/jlipps/Library/Python/3.9"
 export JAVA_HOME="/opt/homebrew/Cellar/openjdk/17.0.1_1"
+export BEGIN_HOME="/Users/jlipps/.begin"
 export GOPATH="/Users/jlipps/Code/golang"
 export GOROOT=""
 
@@ -26,7 +27,7 @@ export RUBY_GEMS=""
 export RUST_HOME="$HOME/.cargo"
 export RUST_BIN=""
 
-export PATH="$BREW_HOME/bin:$MACOS_PYTHON_HOME/bin:$JAVA_HOME/bin:/usr/libexec:/Users/jlipps/bin:$OPENVPN_PATH:$ANDROID_PATH:$TIZEN_PATH:$PLAYDATE_SDK_PATH/bin:$PATH:$WEBOS_CLI_TV"
+export PATH="$BREW_HOME/bin:$MACOS_PYTHON_HOME/bin:$JAVA_HOME/bin:/usr/libexec:/Users/jlipps/bin:$OPENVPN_PATH:$ANDROID_PATH:$TIZEN_PATH:$PLAYDATE_SDK_PATH/bin:$BEGIN_HOME:$PATH:$WEBOS_CLI_TV"
 
 #Setup virtualenvwrapper
 #export WORKON_HOME=/usr/local/env
