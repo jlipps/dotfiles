@@ -68,4 +68,3 @@ function winname() {
 function pane_id_for_window_spec() {
     tmux list-panes -s -F "#I.#P #D" | grep "$1\.$2 %[0-9]" | tail -c -2
 }
-
