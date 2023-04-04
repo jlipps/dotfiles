@@ -2,6 +2,8 @@
 " File type stuff
 " ---------------
 
+let s:dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+
 " Some files should never have spaces at the end of lines
 autocmd FileType c,coffee,scss,css,styl,jade,md,markdown,rb,cpp,java,php,py,python,html,mako,javascript,typescript,typescript.tsx autocmd BufWritePre <buffer> :%s/\s\+$//e
 
@@ -10,12 +12,14 @@ autocmd FileType html,mako,javascript,typescripta,typescript.tsx,scss setlocal s
 autocmd FileType php,py,python,java setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 " Explicitly set filetype for some less common files
+":au Syntax arc runtime! syntax/arc.vim
 au BufRead,BufNewFile *.md,*.markdown set filetype=markdown.pandoc
 au BufRead,BufNewFile *.mako set filetype=mako
 au BufRead,BufNewFile *.eslintrc,*.jshintrc,*.babelrc set filetype=json
 au BufRead,BufNewFile *.tsx set filetype=typescript.tsx
 au BufRead,BufNewFile Jenkinsfile set filetype=groovy
 au BufRead,BufNewFile *.mjs set filetype=javascript
+au BufRead,BufNewFile *.arc set filetype=arc
 
 " Turn on neomake when saving or opening a buffer
 if !exists('g:vscode')

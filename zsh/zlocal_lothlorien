@@ -22,12 +22,20 @@ export OPENVPN_PATH="$BREW_HOME/opt/openvpn/sbin"
 export PLAYDATE_SDK_PATH="/Users/jlipps/Developer/PlaydateSDK"
 
 # TODO if i need these
-export RUBY_BIN=""
+export RUBY_BIN="/opt/homebrew/opt/ruby/bin"
 export RUBY_GEMS=""
 export RUST_HOME="$HOME/.cargo"
 export RUST_BIN=""
 
-export PATH="$BREW_HOME/bin:$MACOS_PYTHON_HOME/bin:$JAVA_HOME/bin:/usr/libexec:/Users/jlipps/bin:$OPENVPN_PATH:$ANDROID_PATH:$TIZEN_PATH:$PLAYDATE_SDK_PATH/bin:$BEGIN_HOME:$PATH:$WEBOS_CLI_TV"
+export PATH="$BREW_HOME/bin:$MACOS_PYTHON_HOME/bin:$RUBY_BIN:$JAVA_HOME/bin:/usr/libexec:/Users/jlipps/bin:$OPENVPN_PATH:$ANDROID_PATH:$TIZEN_PATH:$PLAYDATE_SDK_PATH/bin:$BEGIN_HOME:$PATH:$WEBOS_CLI_TV"
+
+# NVM / Node
+#
+unset npm_config_prefix
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && export NODE_PATH="$(dirname $(dirname $(nvm which current)))/lib/node_modules"
 
 #Setup virtualenvwrapper
 #export WORKON_HOME=/usr/local/env

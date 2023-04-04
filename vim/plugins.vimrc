@@ -41,14 +41,14 @@ if !exists('g:vscode')
     "Plug 'othree/yajs.vim', {'for': 'javascript'}
     "Plug 'othree/es.next.syntax.vim', {'for': 'javascript'}
     Plug 'jonsmithers/vim-html-template-literals'
-    Plug 'pangloss/vim-javascript'
+    "Plug 'pangloss/vim-javascript'
     Plug 'lambdatoast/elm.vim', {'for': 'elm'}
     Plug 'nikvdp/ejs-syntax', {'for': 'ejs'}
     Plug 'lervag/vimtex', {'for': 'tex'}
     Plug 'godlygeek/tabular' " must be before vim-markdown
     Plug 'plasticboy/vim-markdown', {'for': ['markdown', 'md', 'markdown.pandoc', 'ghmarkdown']}
     Plug 'vim-pandoc/vim-pandoc-syntax', {'for': ['markdown', 'md', 'markdown.pandoc', 'ghmarkdown']}
-    Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
+    "Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
 end
 Plug 'solars/github-vim', {'on': 'GithubOpen'}  " open file in github
 Plug 'mileszs/ack.vim', {'on': 'Ack'}  " search files
