@@ -1,5 +1,5 @@
 function cleannvim {
-    find ~/.local/share/nvim/swap -name "*%$1%*.sw[o|p]" -delete
+    find ~/.local/state/nvim/swap -name "*%$1%*.sw[o|p]" -delete
 }
 
 function version_and_publish() {
