@@ -46,7 +46,7 @@ augroup END
 " set up markdown list indentation via comments hack, and don't use CoC in markdown
 au filetype markdown.pandoc set formatoptions+=ro
 au filetype markdown.pandoc set comments=b:*,b:-,b:+,b:1.,n:>
-au filetype markdown.pandoc CocDisable
+"au filetype markdown.pandoc CocDisable
 
 
 " --------------------------------
