@@ -38,5 +38,10 @@
        }
     }
   },
-  "tsserver.tsdk": "/Users/jlipps/.nvm/versions/node/v18.17.0/lib/node_modules/typescript/lib"
+  "tsserver.tsdk": "/Users/jlipps/.nvm/versions/node/v18.17.0/lib/node_modules/typescript/lib",
+  "Lua.runtime.nonstandardSymbol": ["+=", "-=", "*=", "/="],
+  "Lua.workspace.library": ["$PLAYDATE_SDK_PATH/CoreLibs", "./source"],
+  "Lua.diagnostics.globals": ["playdate", "json"],
+  "Lua.runtime.special": {"import": "require"},
+  "Lua.diagnostics.disable": ["undefined-field"]
 }

@@ -20,11 +20,12 @@ end
 if !exists('g:vscode')
     Plug 'gpanders/editorconfig.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-orgmode/orgmode'
     "Plug 'nvim-treesitter/playground'
     Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}  " file explorer
     Plug 'kien/ctrlp.vim', {'on': ['CtrlP', 'CtrlPMRU']}  " fuzzy file finder
     Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' " status bar
-    Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-java coc-omnisharp coc-tsserver coc-pyright coc-eslint coc-deno coc-svelte coc-css coc-prettier coc-xml'}  " code completion based on lang server
+    Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-java coc-omnisharp coc-tsserver coc-pyright coc-eslint coc-deno coc-svelte coc-css coc-prettier coc-xml coc-lua'}  " code completion based on lang server
     Plug 'taphill/arc.vim'  " architect syntax
     Plug 'neomake/neomake', {'on': 'Neomake'}  " maker and linter
     Plug 'benjie/neomake-local-eslint.vim'  " auto lint with .eslintrc

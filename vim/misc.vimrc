@@ -5,7 +5,7 @@
 let s:dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
 " Some files should never have spaces at the end of lines
-autocmd FileType c,coffee,scss,css,styl,jade,md,markdown,rb,cpp,java,php,py,python,html,mako,javascript,typescript,typescript.tsx autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,coffee,scss,css,styl,jade,md,markdown,rb,cpp,java,php,py,python,html,mako,javascript,typescript,typescript.tsx,lua autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Set tab width based on language
 autocmd FileType html,mako,javascript,typescripta,typescript.tsx,scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
