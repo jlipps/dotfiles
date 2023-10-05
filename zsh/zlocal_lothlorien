@@ -23,11 +23,11 @@ export PLAYDATE_SDK_PATH="/Users/jlipps/Developer/PlaydateSDK"
 
 # TODO if i need these
 export RUBY_BIN="/opt/homebrew/opt/ruby/bin"
-export RUBY_GEMS=""
+export RUBY_GEMS="/opt/homebrew/lib/ruby/gems/3.2.0/bin"
 export RUST_HOME="$HOME/.cargo"
 export RUST_BIN=""
 
-export PATH="$BREW_HOME/bin:$MACOS_PYTHON_HOME/bin:$RUBY_BIN:$JAVA_HOME/bin:/usr/libexec:/Users/jlipps/bin:$OPENVPN_PATH:$ANDROID_PATH:$TIZEN_PATH:$PLAYDATE_SDK_PATH/bin:$BEGIN_HOME:$PATH:$WEBOS_CLI_TV"
+export PATH="$BREW_HOME/bin:$MACOS_PYTHON_HOME/bin:$RUBY_BIN:$RUBY_GEMS:$JAVA_HOME/bin:/usr/libexec:/Users/jlipps/bin:$OPENVPN_PATH:$ANDROID_PATH:$TIZEN_PATH:$PLAYDATE_SDK_PATH/bin:$BEGIN_HOME:$PATH:$WEBOS_CLI_TV"
 
 # NVM / Node
 #
