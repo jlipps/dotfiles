@@ -50,6 +50,7 @@ if !exists('g:vscode')
     Plug 'godlygeek/tabular' " must be before vim-markdown
     Plug 'plasticboy/vim-markdown', {'for': ['markdown', 'md', 'markdown.pandoc', 'ghmarkdown']}
     Plug 'vim-pandoc/vim-pandoc-syntax', {'for': ['markdown', 'md', 'markdown.pandoc', 'ghmarkdown']}
+    Plug '~/Code/gh/jlipps/vim-workfile'
     "Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
 end
 Plug 'solars/github-vim', {'on': 'GithubOpen'}  " open file in github

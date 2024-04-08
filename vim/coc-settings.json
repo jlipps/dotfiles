@@ -43,5 +43,13 @@
   "Lua.workspace.library": ["$PLAYDATE_SDK_PATH/CoreLibs", "./source"],
   "Lua.diagnostics.globals": ["playdate", "json"],
   "Lua.runtime.special": {"import": "require"},
-  "Lua.diagnostics.disable": ["undefined-field"]
+  "Lua.diagnostics.disable": [
+    "undefined-field"
+  ],
+  "java.imports.gradle.wrapper.checksums": [
+    {
+      "sha256": "1ca04e74ee966719e1155341da6fca086d0d21686db29e3efdebd03817e639e0",
+      "allowed": false
+    }
+  ]
 }

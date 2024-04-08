@@ -14,7 +14,7 @@ alias nvimplug="vim +PlugInstall +qall"
 alias nvimclean="vim +PlugClean +qall"
 alias hsvpn="sudo openvpn --config ~/.vpn/jlipps.ovpn"
 alias npr="npm exec --"
-alias hsstandup="cd ~/Code/local/hs-sandbox && nvim standup.org"
+alias hsstandup="cd ~/Code/local/hs-sandbox && nvim standup.work"
 
 # GIT ALIASES
 alias ggs="git status"

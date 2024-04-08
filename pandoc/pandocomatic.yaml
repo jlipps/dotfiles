@@ -19,7 +19,8 @@ templates:
       standalone: true
       citeproc: true
       bibliography: bibs/regent-master.bib
-      csl: csl/turabian-fullnote-bibliography.csl
+      csl: csl/chicago-fullnote-bibliography.csl
+      citation-abbreviations: bibs/regent-shorttitles.json
     metadata:
       author: Jonathan Lipps
       mainfont: Times New Roman
