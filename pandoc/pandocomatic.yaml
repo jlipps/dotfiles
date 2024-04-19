@@ -57,11 +57,17 @@ templates:
       standalone: true
       citeproc: true
       bibliography: bibs/regent-master.bib
-      #csl: templates/turabian-fullnote-bibliography.csl
+      csl: csl/chicago-fullnote-bibliography.csl
     metadata:
       author: Jonathan Lipps
       papersize: letter
+      fontsize: 12pt
       documentclass: article
       reference-section-title: Works Cited
+      header-includes: |
+        \usepackage{setspace}
+        \setstretch{1.2}
+        \renewcommand{\familydefault}{\sfdefault}
+        \setlength{\parskip}{13pt}
     postprocessors:
       - postprocessors/fixbib.sh
