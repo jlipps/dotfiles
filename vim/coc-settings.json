@@ -5,40 +5,16 @@
   "java.autobuild.enabled": false,
   "java.project.referencedLibraries": "~/.gradle/caches/**",
   "java.maven.downloadSources": true,
-  "tsserver.enableJavascript": true,
-  "tsserver.npm": "~/.nvm/versions/node/v18.17.0/bin",  
+  "java.configuration.compliance": "11",
+  "tsserver.npm": "~/.nvm/versions/node/v20.17.0/bin",  
+  "tsserver.tsdk": "~/.nvm/versions/node/v20.17.0/lib/node_modules/typescript/lib",
+  "tsserver.useLocalTsdk": true,
   "python.jediEnabled": false,
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Args": ["--ignore=E501,E731"],
   "python.pythonPath": "/opt/homebrew/bin/python3",
-  "languageserver": {
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cc", "cpp", "objc", "objcpp"],
-      "rootPatterns": [".ccls", ".ccls-root", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-      "initializationOptions": {
-         "cache": {
-           "directory": ".ccls-cache"
-         },
-         "clang": {
-           "resourceDir": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr",
-           "extraArgs": [
-             "-isystem",
-             "/usr/local/include",
-             "-isystem",
-             "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1",
-             "-isystem",
-             "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
-             "-isystem",
-             "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include/"        
-           ]
-         }
-       }
-    }
-  },
-  "tsserver.tsdk": "/Users/jlipps/.nvm/versions/node/v18.17.0/lib/node_modules/typescript/lib",
   "Lua.runtime.nonstandardSymbol": ["+=", "-=", "*=", "/="],
   "Lua.workspace.library": ["$PLAYDATE_SDK_PATH/CoreLibs", "./source"],
   "Lua.diagnostics.globals": ["playdate", "json"],
@@ -51,5 +27,6 @@
       "sha256": "1ca04e74ee966719e1155341da6fca086d0d21686db29e3efdebd03817e639e0",
       "allowed": false
     }
-  ]
+  ],
+  "svelte.enable-ts-plugin": false
 }

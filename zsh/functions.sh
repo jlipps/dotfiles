@@ -54,6 +54,9 @@ function newmux() {
     tmux send-keys -t "$1:1.1" nvim C-m
     sleep 0.3
     tmux send-keys -t "$1:1.1" ",N"
+    sleep 0.2
+    tmux send-keys -t "$1:1.1" C-l
+    sleep 0.2
     tmux attach-session -t "$1"
 }
 
@@ -67,4 +70,8 @@ function winname() {
 
 function pane_id_for_window_spec() {
     tmux list-panes -s -F "#I.#P #D" | grep "$1\.$2 %[0-9]" | tail -c -2
+}
+
+function workon() {
+    source ~/.venv/$1/bin/activate
 }
