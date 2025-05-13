@@ -5,7 +5,7 @@ ifeq ($(arch),Linux)
 	install = sudo apt install -y
 	update = sudo apt update
 	upgrade = sudo apt install -y
-	python = python@2
+	python = python@3
 	pip = pip
 else
 	install = brew install
